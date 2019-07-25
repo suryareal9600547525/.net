@@ -1,0 +1,302 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+
+namespace Collections_Generics
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DemoArrayList();
+            //DemoStack();
+            //DemoQueue();
+            // DemoHashtable();
+            //DemoGenericList();
+            Console.ReadKey();
+
+        }
+        static void DemoArrayList()
+        {
+
+            ArrayList objAL = new ArrayList();
+            objAL.Add("America");
+            objAL.Add("Australia");
+            objAL.Add("india");
+
+            objAL.Add("russia");
+            objAL.Add("nz");
+            //
+            Console.WriteLine("capacity of the collection" + objAL.Capacity);
+            Console.WriteLine("count of the collection" + objAL.Count);
+            Console.WriteLine("---list of items using for loop----");
+            for (int i = 0; i < objAL.Count; i++)
+            {
+                Console.WriteLine(objAL[i]);
+            }
+            //
+            Console.WriteLine("-----list of items using foreach loop---");
+            foreach (var objCountry in objAL)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+            //
+            object[] objCounytry = new object[objAL.Count];
+            objAL.CopyTo(objCounytry);
+            Console.WriteLine("-----List of Countries from Object array---");
+            foreach (var objCountry in objAL)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+            bool ContainsItem = objAL.Contains("india");
+            Console.WriteLine("india is a part of collection :" + ContainsItem);
+            objAL.Insert(0, "pakistan");
+            Console.WriteLine("---list of country after adding---");
+            foreach (var objCountry in objAL)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+            objAL.Remove("nz");
+            Console.WriteLine("-----list of country after removing--");
+            foreach (var objCountry in objAL)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+            objAL.Sort();
+            Console.WriteLine("-----list of country after sorting--");
+            foreach (var objCountry in objAL)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+
+
+
+        }
+        static void DemoStack()
+        {
+            Stack objStack = new Stack();
+            objStack.Push("January");
+            objStack.Push("February");
+            objStack.Push("March");
+            objStack.Push("April");
+            Console.WriteLine("----List of months using Foreach loop---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item poped: " + objStack.Pop());
+            Console.WriteLine("----List of months using Calling pop---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item peek: " + objStack.Peek());
+            Console.WriteLine("----List of months  Calling peek method---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+
+        }
+        static void DemoQueue()
+        {
+            Queue objQueue = new Queue();
+            objQueue.Enqueue("January");
+            objQueue.Enqueue("February");
+            objQueue.Enqueue("March");
+            objQueue.Enqueue("April");
+            Console.WriteLine("----List of months using Foreach loop---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item Dequeued: " + objQueue.Dequeue());
+            Console.WriteLine("----List of months using Calling Dequeue---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item peek: " + objQueue.Peek());
+            Console.WriteLine("----List of months  Calling peek method---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+
+
+        }
+        static void DemoHashtable()
+        {
+            Hashtable objHashtable = new Hashtable();
+            objHashtable.Add(101, "raj");
+            objHashtable.Add(102, "ranveer");
+            objHashtable.Add(103, "arya");
+            objHashtable.Add(104, "anurag");
+            //
+            Console.WriteLine("------List of employees using foreach loop----");
+            foreach (DictionaryEntry objDE in objHashtable)
+            {
+                Console.WriteLine("Key" + objDE.Key + ", Value: " + objDE.Value);
+
+            }
+            //generic list
+
+        }
+        static void DemoGenericList()
+        {
+            List<String> objList = new List<string>();
+            objList.Add("America");
+            objList.Add("Australia");
+            objList.Add("india");
+            objList.Add("russia");
+            objList.Add("nz");
+            //
+            Console.WriteLine("capacity of the Array list" + objList.Capacity);
+            Console.WriteLine("count of the Array list" + objList.Count);
+            Console.WriteLine("---list of countries using for loop----");
+            for (int i = 0; i < objList.Count; i++)
+            {
+                Console.WriteLine(objList[i]);
+            }
+            //
+            Console.WriteLine("-----list of items using foreach loop---");
+            foreach (var c in objList)
+            {
+                Console.WriteLine(c);
+
+            }
+            //
+            Console.WriteLine("-----list of items using foreach loop---");
+            foreach (var c in objList)
+            {
+                Console.WriteLine(c);
+
+            }
+            //
+            string[] objCountry = new string[objList.Count];
+            objList.CopyTo(objCountry);
+            Console.WriteLine("-----List of Countries from Object array---");
+            foreach (var c in objCountry)
+            {
+                Console.WriteLine(c);
+
+            }
+            bool ContainsItem = objList.Contains("india");
+            Console.WriteLine("india is a part of collection :" + ContainsItem);
+            objList.Insert(0, "pakistan");
+            Console.WriteLine("---list of country after adding---");
+            foreach (var c in objCountry)
+            {
+                Console.WriteLine(objCountry);
+
+            }
+            objList.Remove("nz");
+            Console.WriteLine("-----list of country after removing--");
+            foreach (var c in objCountry)
+            {
+                Console.WriteLine(c);
+
+            }
+            objList.Sort();
+            Console.WriteLine("-----list of country after sorting--");
+            foreach (var c in objList)
+            {
+                Console.WriteLine(c);
+
+            }
+        }
+        static void DemoGenericStack()
+        {
+            Stack<String> objStack = new Stack<String>();
+            objStack.Push("January");
+            objStack.Push("February");
+            objStack.Push("March");
+            objStack.Push("April");
+            Console.WriteLine("----List of months using Foreach loop---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item poped: " + objStack.Pop());
+            Console.WriteLine("----List of months using Calling pop---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item peek: " + objStack.Peek());
+            Console.WriteLine("----List of months  Calling peek method---");
+            foreach (var objMonth in objStack)
+            {
+                Console.WriteLine(objMonth);
+            }
+
+        }
+        static void DemoGenericQueue()
+        {
+            Queue<String> objQueue = new Queue<String>();
+            objQueue.Enqueue("January");
+            objQueue.Enqueue("February");
+            objQueue.Enqueue("March");
+            objQueue.Enqueue("April");
+            Console.WriteLine("----List of months using Foreach loop---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item Dequeued: " + objQueue.Dequeue());
+            Console.WriteLine("----List of months using Calling Dequeue---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+            Console.WriteLine("item peek: " + objQueue.Peek());
+            Console.WriteLine("----List of months  Calling peek method---");
+            foreach (var objMonth in objQueue)
+            {
+                Console.WriteLine(objMonth);
+
+            }
+        }
+        static void DemoGenericDictionary()
+        {
+            Dictionary<int, string> objDictionary = new Dictionary<int, string>();
+            objDictionary.Add(101, "raj");
+            objDictionary.Add(102, "ranveer");
+            objDictionary.Add(103, "arya");
+            objDictionary.Add(104, "anurag");
+            //
+            Console.WriteLine("------List of employees using foreach loop----");
+            foreach (KeyValuePair<int, string> objDE in objDictionary)
+            {
+                Console.WriteLine("Key" + objDE.Key + ", Value: " + objDE.Value);
+
+            }
+            IDictionaryEnumerator objIDE = objDictionary.GetEnumerator();
+            while (objIDE.MoveNext())
+            {
+                Console.WriteLine("Key" + objIDE.Key + ", Value: " + objIDE.Value);
+            }
+        }
+
+    }
+}
+
