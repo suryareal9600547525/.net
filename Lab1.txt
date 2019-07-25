@@ -1,0 +1,418 @@
+Lab1_1
+
+Employee.cs
+
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Employee
+{
+    public class Employee
+    {
+        int employeeid;
+        string employeename;
+        string address;
+        string city;
+        string department;
+        int salary;
+
+        public int Employeeid
+        {
+            get
+            {
+                return employeeid;
+            }
+            set
+            {
+                employeeid = value;
+
+            }
+        }
+        public string Employeename
+        {
+            get
+            {
+                return employeename;
+            }
+            set
+            {
+                employeename = value;
+            }
+        }
+        public string Address
+        {
+            get
+            {
+                return address;
+            }
+            set
+            {
+                address = value;
+
+            }
+        }
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+            set
+            {
+                city = value;
+
+            }
+        }
+        public string Department
+        {
+            get
+            {
+                return department;
+            }
+            set
+            {
+                department = value;
+
+            }
+        }
+        public int Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                salary = value;
+
+            }
+        }
+    }
+}
+
+
+
+
+program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Employee;
+
+
+namespace lab1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee.Employee[] emp = new Employee.Employee[2];
+
+            for(int i=0; i<emp.Length;i++)
+            {
+                emp[i] = new Employee.Employee();
+
+            }
+     for (int i=0;i<emp.Length;i++)
+            {
+                Console.WriteLine("--------Employee Details------");
+                Console.WriteLine("Employee ID: ");
+                emp[i].Employeeid = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Employee Name: ");
+                emp[i].Employeename = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Employee Address: ");
+                emp[i].Address= Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Employee City: ");
+                emp[i].City = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Employee Department: ");
+                emp[i].Department = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("Employee Salary: ");
+                emp[i].Salary = Convert.ToInt32(Console.ReadLine());
+
+            }
+            Console.WriteLine("------Display------------");
+            for(int i=0; i < emp.Length; i++)
+                {
+                Console.WriteLine("Employee Name is " + emp[i].Employeename + " and his salary is " + emp[i].Salary);
+
+
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+Lab1_2
+
+Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double operation;
+            double fnum;
+            double snum;
+            double result;
+            double opt;
+
+            do
+            {
+                /*Console.WriteLine("enter the first number:");
+                fnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("enter the second number:");
+                snum = Convert.ToDouble(Console.ReadLine());*/
+                Console.WriteLine("enter 1 for addition");
+                Console.WriteLine("enter 2 for subtraction");
+                Console.WriteLine("enter 3 for multiply");
+                Console.WriteLine("enter 4 for division");
+                Console.WriteLine("enter 5 for modulo");
+
+                Console.WriteLine("Choose the option:");
+                opt = Convert.ToDouble(Console.ReadLine());
+                //calculator
+                Arithmeticoperation.Calculator objcal = new Arithmeticoperation.Calculator();
+
+                switch (opt)
+                {
+                    case 1:
+                        //Addition
+                        Console.WriteLine("enter first value: ");
+                        fnum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("enter second value: ");
+                        snum = Convert.ToDouble(Console.ReadLine());
+                        result = objcal.Addition(fnum, snum);
+                        Console.WriteLine("Addition of two numbers is: " + result);
+                        break;
+
+                    case 2:
+                        //subtraction
+                        Console.WriteLine("enter first value: ");
+                        fnum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("enter second value: ");
+                        snum = Convert.ToDouble(Console.ReadLine());
+                        result = objcal.Subtraction(fnum, snum);
+                        Console.WriteLine("Subtraction of two numbers is: " + result);
+                        break;
+
+                    case 3:
+                        //Multiplication
+                        Console.WriteLine("enter first value: ");
+                        fnum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("enter second value: ");
+                        snum = Convert.ToDouble(Console.ReadLine());
+                        result = objcal.Multiplication(fnum, snum);
+                        Console.WriteLine("Multiplication of two numbers is: " + result);
+                        break;
+
+                    case 4:
+                        //Divison
+                        Console.WriteLine("enter first value: ");
+                        fnum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("enter second value: ");
+                        snum = Convert.ToDouble(Console.ReadLine());
+                        result = objcal.Division(fnum, snum);
+                        Console.WriteLine("Division of two numbers is: " + result);
+                        break;
+
+                    case 5:
+                        //Modulo
+                        Console.WriteLine("enter first value: ");
+                        fnum = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("enter second value: ");
+                        snum = Convert.ToDouble(Console.ReadLine());
+                        result = objcal.Modulo(fnum, snum);
+                        Console.WriteLine("Modulo of two numbers is: " + result);
+                        break;
+
+                    case 6:
+                        //exit
+                        Environment.Exit(0);
+                        break;
+
+                    default:
+                        Console.WriteLine("please enter a valid number...");
+                        break;
+                }
+
+                Console.WriteLine("do you want to continue? press y or else press N");
+                opt = Convert.ToChar(Console.ReadLine());
+
+            } while (opt == 'y');
+
+        }
+    }
+}
+
+
+new class libray (reference must)
+
+Arithmetic operation
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Arithmeticoperation
+{
+    public class Calculator
+    {
+        public double Addition(double num1, double num2)
+        {
+            double result;
+            result = num1 + num2;
+            return result;
+        }
+        public double Subtraction(double num1, double num2)
+        {
+            double result;
+            result = num1 - num2;
+            return result;
+        }
+        public double Multiplication(double num1, double num2)
+        {
+            double result;
+            result = num1 * num2;
+            return result;
+        }
+        public double Division(double num1, double num2)
+        {
+            double result;
+            result = num1 / num2;
+            return result;
+        }
+        public double Modulo(double num1, double num2)
+        {
+            double result;
+            result = num1 % num2;
+            return result;
+        }
+
+    }
+}
+
+
+Lab1_3
+
+program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int opt;
+            char choose;
+
+            do
+            {
+                Console.WriteLine("enter a number");
+                opt = Convert.ToInt32(Console.ReadLine());
+                switch (opt)
+                {
+                    case 1:
+                        Console.WriteLine("you pressed the number 1");
+                        break;
+                    case 2:
+                        Console.WriteLine("you pressed the number 2");
+                        break;
+                    case 3:
+                        Console.WriteLine("you pressed the number 3");
+                        break;
+                    case 4:
+                        Console.WriteLine("you pressed the number 4");
+                        break;
+                    case 5:
+                        Console.WriteLine("you pressed the number 5");
+                        break;
+                    default:
+                        Console.WriteLine("please press a valid number");
+                        break;
+
+                }
+                Console.WriteLine("___----------______");
+                Console.WriteLine("do you want to continue (y/n)");
+
+                choose = Convert.ToChar(Console.ReadLine());
+            } while (choose == 'y');
+            //Console.Readkey();
+        }
+    }
+}
+
+
+Lab1_4
+
+program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Rollnumber;
+            String Studentname;
+            byte Age;
+            char Gender;
+            DateTime DoB;
+            String Address;
+            float Percentage;
+
+            Console.WriteLine("____----____Enter student details____---___");
+            Console.WriteLine("____________________________________________");
+            Console.WriteLine("RollNo");
+            Rollnumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("StudentName");
+            Studentname = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("StudentAge");
+            Age = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("Gender");
+            Gender = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("DoB");
+            DoB = Convert.ToDateTime(Console.ReadLine());
+            Console.WriteLine("Address");
+            Address = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Percentage");
+            Percentage = Convert.ToInt64(Console.ReadLine());
+
+            Console.WriteLine("_______----______------_____");
+            Console.WriteLine("Displaying Student Details");
+            Console.WriteLine("Student RollNo is " + Rollnumber);
+            Console.WriteLine("Student Name is " + Studentname);
+            Console.WriteLine("Student Age is " + Age);
+            Console.WriteLine("Student Gender is " + Gender);
+            Console.WriteLine("Student DateOfBirth is " + DoB);
+            Console.WriteLine("Student Address is " + Address);
+            Console.WriteLine("Student Percentage is " + Percentage);
+        }
+    }
+}
