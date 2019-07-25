@@ -1,0 +1,84 @@
+class file
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab2_1
+{
+    struct NumberIp
+    {
+        public int number;
+
+        public NumberIp(int num)
+        {
+            number = num;
+        }
+
+        public int Suqare()
+        {
+            int result;
+            result = number * number;
+            return result;
+        }
+
+        public int Cube()
+        {
+            int result;
+            result = number * number * number;
+            return result;
+        }
+    }
+}
+
+Program.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab2_1
+{
+    class Program
+    {
+        
+            
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Select the option:");
+            Console.WriteLine("1-Square");
+            Console.WriteLine("2-Cube");
+            int opt = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the number:");
+            int inum = Convert.ToInt32(Console.ReadLine());
+
+            NumberIp objn = new NumberIp(inum);
+
+            int result;
+            switch (opt)
+            {
+                case 1:
+                    result = objn.Suqare();
+                    Console.WriteLine(inum + " Square is : " + result);
+                    break;
+                case 2:
+                    result = objn.Cube();
+                    Console.WriteLine(inum + " Cube is : " + result);
+                    break;
+                default:
+                    break;
+
+
+
+            }
+            Console.ReadKey();
+        }
+    }
+}
