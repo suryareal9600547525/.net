@@ -1,0 +1,9 @@
+
+To Upload your Assignments and MPT Solutions
+-------------------------------------------
+http://ndafile:8081/iUpload/
+
+
+icompass link
+
+https://icompass.fs.capgemini.com/icompassWebsite/
